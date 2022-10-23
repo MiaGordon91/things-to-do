@@ -11,18 +11,25 @@
                 Things To Do 
             </title>
         <meta charset="UTF-8">
+
+        <script>
+            function validateForm() {
+                var x = document.forms["tasklist"]["task_input"].value;
+                if (x == "") {
+                alert("A task must be entered");
+                return false;
+                }
+            }
+        </script>
     </head>
 
     <body>
 
-        <h1>Crack On With It</h2>
+        <h1>Crack On With It!</h2>
 
-            <form method="post" action="processForm.php" name="tasklist">
-                    <?php if (isset($error)) { ?>
-                        <p><?php echo $error; ?></p>
-                    <?php } ?>
+            <form method="post" action="processForm.php" name="tasklist" onsubmit="return validateForm()" required>
                 <label for="task" name="task">My Task:</label>
-                <input type="text" id="inputbox" name="task">
+                <input type="text" id="inputbox" name="task_input" class="task">
                 <button type="submit" name="submit">Submit</button>            
             </form>
 
@@ -31,9 +38,7 @@
             <tr>
                 <th>Number</th>
                 <th>Tasks</th>
-                <th>Deadline</th>
                 <th>Completed</th>
-                <th style="width: 60px;">Action</th>
             </tr>
         </thead>
 
@@ -49,7 +54,7 @@
                     <td class="task"> <?php echo $row['Task']; ?> </td>
                     <td class="delete">
                     <a href="processForm.php?del_task=<?php echo $row['TaskId'] ?>">x</a>
-                    </td>
+                </td>
         </tr>
             <?php $i++; } ?>                 
         </tbody>
