@@ -65,6 +65,7 @@
                 <th>Task Id</th>
                 <th>Task</th>
                 <th>Completed</th>
+                <th>Ready to delete?</th>
             </tr>
         </thead>
 
@@ -79,6 +80,7 @@
                 <?php echo $row['TaskId']; ?> 
                 </td>
                     <td class="task"> <?php echo $row['Task']; ?> </td>
+                    <td class="tickbox"> <input type="checkbox"> </td>
                     <td>
                         <!-- url decode -->
                         <a href= "index.php?id= <?php echo($row['TaskId']);?>" class='btn'>Delete</a>

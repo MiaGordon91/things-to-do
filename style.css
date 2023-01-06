@@ -16,11 +16,14 @@ h1 {
 }
 
 form {
-    /* position: fixed; */
-    border: 3px solid whitesmoke;
+    margin-top: 50px;
+    border: 2px solid #E9E9E9;
     padding: 50px;
     display: inline-block;
     width: 80%;
+    border-radius: 25px;
+    /* background-color:; */
+    ;
 }
 
 p {
@@ -49,28 +52,29 @@ label {
 table {
     width: 80%;
     margin: 30px auto;
+    margin-top: 80px;
     border: 3px solid whitesmoke;
     width: 90%;
     /* border-collapse: collapse; */
 }
 
-/* tr {
-	border-bottom: 1px solid #cbcbcb;
-    border: 5px solid grey;    
-} */
+tr {
+    border: 1px solid whitesmoke;    
+}
 
 th {
 	font-size: 19px;
 	color: black;
+    background-color:whitesmoke;
 }
 
 th, td{
     height: 30px;
-    padding: 2px;
+    padding: 4px;
 }
 
 tr:hover {
-	background: #E9E9E9;
+	background: lightpink;
 }
 
 .task {
@@ -80,6 +84,8 @@ tr:hover {
 .delete{
 	text-align: center;
 }
+
+
 .delete a{
 	color: white;
 	background: #959095;
@@ -100,6 +106,7 @@ tr:hover {
     background: #070707;
     color: white;
 }
+
 
 
 
