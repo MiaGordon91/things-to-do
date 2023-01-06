@@ -80,10 +80,24 @@ tr:hover {
 }
 .delete a{
 	color: white;
-	background: #a52a2a;
+	background: #959095;
 	padding: 1px 6px;
 	border-radius: 3px;
 	text-decoration: none;
 }
+
+.btn{
+    color: black;
+	background: white;
+	padding: 1px 6px;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.btn:hover{
+    background: #070707;
+    color: white;
+}
+
 
 

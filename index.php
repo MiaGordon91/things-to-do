@@ -1,16 +1,18 @@
 <!DOCTYPE html> 
 
 <?php
-    include 'processForm.php';
+    include "processForm.php";
 ?>
 
 <html>
     <head>
+        <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
+
             <title>
                 Things To Do 
             </title>
-        <meta charset="UTF-8">
+
 
         <script>
             function validateForm() {
@@ -21,40 +23,42 @@
                 }
             }
         </script>
-    </head>
+
+ </head>
 
     <body>
 
-        <h1>Crack On With It!</h2>
+        <h1>Crack On With It!</h1>
 
             <form method="post" action="processForm.php" name="tasklist" onsubmit="return validateForm()" required>
-                <label for="task" name="task">My Task:</label>
+                <label for="task" name="task">New Task:</label>
                 <input type="text" id="inputbox" name="task_input" class="task">
                 <button type="submit" name="submit">Submit</button>            
             </form>
 
-    <table>
+    <table id="taskTable">
         <thead>
             <tr>
-                <th>Number</th>
-                <th>Tasks</th>
+                <th>Task Id</th>
+                <th>Task</th>
                 <th>Completed</th>
             </tr>
         </thead>
 
-        <tbody>
+        <tbody class="row_position">
            <?php
+             $sql = "SELECT * FROM Tasks ORDER BY TaskId";
              $tasks = mysqli_query($conn, "SELECT * FROM Tasks");
 
              $i = 1; while($row = mysqli_fetch_array($tasks)) { ?>
         <tr>
             <td> 
-                <?php echo $i; ?> 
+                <?php echo $row['TaskId']; ?> 
                 </td>
                     <td class="task"> <?php echo $row['Task']; ?> </td>
-                    <td class="delete">
-                    <a href="processForm.php?del_task=<?php echo $row['TaskId'] ?>">x</a>
-                </td>
+                    <td>
+                        <a href="index.php?id= <?php echo $row['TaskId']; ?>" class='btn'>Delete</a>
+                    </td>
         </tr>
             <?php $i++; } ?>                 
         </tbody>
