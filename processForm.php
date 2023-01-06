@@ -32,9 +32,12 @@ if (isset($_POST['submit'])) {
 // Deleting record from database
 if (isset($_GET['id'])) {
     $sql = "DELETE FROM Tasks WHERE TaskId='". $_GET['id']."'";
+    $_SESSION['message'] = 'test';
     if($sql) {
         mysqli_query($conn, $sql);
-        echo "Record deleted successfully";
+
+        $_SESSION['status'] = "Your task has been successfully deleted";
+    
     } else {
         echo "Error deleting record";
     }
