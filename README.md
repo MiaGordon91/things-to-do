@@ -1,8 +1,17 @@
-php -S localhost:8000 to run locally
+Simple To Do List App
 
+Built using PHP with MySQL database
 
-Actions
+Run php -S localhost:8000 to run locally
 
-- Add tickbox to tasks
-- Add calendar to set deadline when creating new task 
+MVP
+- Add items to the app
+- Tick when completed
+- Delete items from the app 
+
+Extended options 
 - Add priority label to tasks
+- Option to move task to its own category
+- Add calendar to set deadline when creating new task 
+- Add completed column to db table
+

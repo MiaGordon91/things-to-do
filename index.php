@@ -62,7 +62,7 @@
     <table id="taskTable">
         <thead>
             <tr>
-                <th>Task Id</th>
+                <th>Category</th>
                 <th>Task</th>
                 <th>Completed</th>
                 <th>Ready to delete?</th>
@@ -76,9 +76,7 @@
 
              $i = 1; while($row = mysqli_fetch_array($tasks)) { ?>
         <tr>
-            <td> 
-                <?php echo $row['TaskId']; ?> 
-                </td>
+            <td> <?php $row['TaskId']; ?> </td>
                     <td class="task"> <?php echo $row['Task']; ?> </td>
                     <td class="tickbox"> <input type="checkbox"> </td>
                     <td>
